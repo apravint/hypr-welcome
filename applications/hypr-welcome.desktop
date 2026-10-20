@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Hyprland Welcome
+Comment=First-boot onboarding guide, keybindings reference, and hardware diagnostics
+Exec=hypr-welcome
+Icon=system-help
+Terminal=false
+Type=Application
+Categories=System;Settings;Utility;
+Keywords=welcome;tour;shortcuts;help;onboarding;hyprland;wayland;

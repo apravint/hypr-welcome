@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hypr-welcome"
+version = "0.1.0"
+description = "Aesthetic First-Boot Onboarding Guide & Hardware Diagnostics Dashboard for Hyprland"
+readme = "README.md"
+authors = [{ name = "Ayyappa Pravin", email = "apravint@gmail.com" }]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Desktop Environment :: Window Managers",
+    "Topic :: System :: Hardware"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pygobject"
+]
+
+[project.scripts]
+hypr-welcome = "hypr_welcome.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/apravint/hypr-welcome"
+Repository = "https://github.com/apravint/hypr-welcome"
+Issues = "https://github.com/apravint/hypr-welcome/issues"
