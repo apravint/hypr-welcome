@@ -19,9 +19,10 @@ classifiers = [
     "Topic :: System :: Hardware"
 ]
 requires-python = ">=3.8"
-dependencies = [
-    "pygobject"
-]
+dependencies = []
+
+[project.optional-dependencies]
+gui = ["pygobject"]
 
 [project.scripts]
 hypr-welcome = "hypr_welcome.cli:main"
@@ -30,3 +31,7 @@ hypr-welcome = "hypr_welcome.cli:main"
 Homepage = "https://github.com/apravint/hypr-welcome"
 Repository = "https://github.com/apravint/hypr-welcome"
 Issues = "https://github.com/apravint/hypr-welcome/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hypr_welcome*"]

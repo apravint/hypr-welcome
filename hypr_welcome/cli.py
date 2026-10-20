@@ -5,7 +5,8 @@ Hypr-Welcome CLI Entry Point
 import sys
 import os
 import argparse
-from .app import run_app, ONBOARDED_FLAG
+
+ONBOARDED_FLAG = os.path.expanduser("~/.local/state/hypr-welcome/.onboarded")
 
 def main():
     parser = argparse.ArgumentParser(
@@ -28,7 +29,13 @@ def main():
         # Already onboarded; exit quietly
         sys.exit(0)
 
-    run_app()
+    try:
+        from .app import run_app
+        run_app()
+    except (ImportError, ValueError) as e:
+        print(f"Error: PyGObject (GTK 3) is required to run the GUI: {e}", file=sys.stderr)
+        print("Please install: sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
